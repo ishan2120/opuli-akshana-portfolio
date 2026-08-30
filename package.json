@@ -1,0 +1,18 @@
+{
+  "name": "opuli-akshana-portfolio",
+  "version": "1.0.0",
+  "description": "Opuli Akshana ✦ Stargazer Portfolio & Web Blog",
+  "main": "index.html",
+  "scripts": {
+    "start": "node serve.js",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "astronomy",
+    "portfolio",
+    "blog",
+    "stargazer"
+  ],
+  "author": "Opuli Akshana",
+  "license": "MIT"
+}

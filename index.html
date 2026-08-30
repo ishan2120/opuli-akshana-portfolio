@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opuli Akshana ✦ Stargazer Portfolio & Blog</title>
+    <meta name="description" content="Official portfolio and blog of Opuli Akshana — Stargazer of Infinite Realms. Made of stardust, thinking in quarks. Exploring astronomy and astrophilia.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- FAST SKELETON SCREEN LOADER -->
+    <div id="skeleton-loader">
+        <div class="skeleton-container container">
+            <div class="skeleton-nav">
+                <div class="skeleton-block sk-logo"></div>
+                <div class="skeleton-block sk-nav-items"></div>
+            </div>
+            <div class="skeleton-hero">
+                <div class="skeleton-block sk-avatar"></div>
+                <div class="skeleton-hero-text">
+                    <div class="skeleton-block sk-title"></div>
+                    <div class="skeleton-block sk-subtitle"></div>
+                    <div class="skeleton-block sk-card"></div>
+                    <div class="skeleton-block sk-btns"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Canvas for Stars -->
+    <canvas id="starfield-canvas"></canvas>
+    
+    <!-- Ambient Cursor Glow -->
+    <div id="cursor-aura"></div>
+
+    <!-- Navigation Header -->
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" data-popup="Opuli Akshana Realm">
+                <span class="logo-star">✦</span> OPULI AKSHANA
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active" data-popup="Home Realm">Realm</a>
+                <a href="#journal" class="nav-link" data-popup="Blog Archives">Journal</a>
+                <a href="#quantum-lab" class="nav-link" data-popup="Particle Lab">Quantum Lab</a>
+                <a href="#gallery" class="nav-link" data-popup="Photo Transmissions">Gallery</a>
+                <a href="#manifesto" class="nav-link" data-popup="Astrophile Creed">Manifesto</a>
+                <a href="#contact" class="nav-link" data-popup="Transmit Signal">Signal</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="soundscape-btn" class="btn-icon popup-hover" title="Toggle Cosmic Soundscape" data-popup="Audio 108Hz Drone" aria-label="Toggle Cosmic Soundscape">
+                    <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main>
+
+        <!-- HERO SECTION (SIMPLIFIED: IMAGE LEFT, TEXT RIGHT) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-glow"></div>
+            <div class="container hero-grid">
+                
+                <!-- Hero Left: Simplified Portrait Image -->
+                <div class="hero-visual">
+                    <div class="portrait-stage">
+                        <div class="portrait-frame glass-card popup-hover tilt-card" data-popup="Opuli Akshana">
+                            <img src="Hero image.jpg" alt="Opuli Akshana - Stargazer" class="portrait-img">
+                            <div class="portrait-glow-overlay"></div>
+                            <div class="portrait-caption">
+                                <span class="caption-title">OPULI AKSHANA</span>
+                                <span class="caption-sub">Stargazer ✦ Earthly Presence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Clean Simplified Content -->
+                <div class="hero-content">
+                    <div class="badge-row">
+                        <span class="cosmic-tag popup-hover" data-popup="Stargazer Bio"><i class="fa-solid fa-star"></i> 18+ STARGAZER</span>
+                        <span class="cosmic-tag popup-hover" data-popup="Cosmic Realms"><i class="fa-solid fa-infinity"></i> INFINITE REALMS</span>
+                    </div>
+
+                    <h1 class="hero-name glow-text">
+                        OPULI <span class="accent-text">AKSHANA</span>
+                    </h1>
+
+                    <p class="hero-tagline">
+                        An Astral Projection of My Earthly Presence
+                    </p>
+
+                    <div class="hero-bio-card glass-card popup-hover" data-popup="Stardust Bio">
+                        <div class="bio-line">
+                            <i class="fa-solid fa-atom quantum-icon"></i>
+                            <p>Made of <strong class="highlight-cyan">stardust</strong>, thinking in <strong class="highlight-cyan">quarks</strong>.</p>
+                        </div>
+                        <div class="bio-hashtags">
+                            <span class="hashtag">#astronomy</span>
+                            <span class="hashtag">#astrophile</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#journal" class="btn btn-primary popup-hover" data-popup="Read Journal">
+                            <i class="fa-solid fa-book-open"></i> Read Journal
+                        </a>
+                        <a href="#quantum-lab" class="btn popup-hover" data-popup="Particle Lab">
+                            <i class="fa-solid fa-atom"></i> Quantum Lab
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="btn popup-hover" data-popup="Instagram">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STATS & TELEMETRY BANNER -->
+        <section class="stats-banner">
+            <div class="container stats-grid">
+                <div class="stat-card glass-card popup-hover" data-popup="Cosmic Universe Age">
+                    <div class="stat-icon"><i class="fa-solid fa-meteor"></i></div>
+                    <div class="stat-num">13.8B</div>
+                    <div class="stat-label">Years of Stardust Age</div>
+                </div>
+
+                <div class="stat-card glass-card popup-hover" data-popup="Quark Synapses">
+                    <div class="stat-icon"><i class="fa-solid fa-atom"></i></div>
+                    <div class="stat-num">9.42E+27</div>
+                    <div class="stat-label">Quarks Thinking in Sync</div>
+                </div>
+
+                <div class="stat-card glass-card popup-hover" data-popup="Infinite Dimensions">
+                    <div class="stat-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="stat-num">∞</div>
+                    <div class="stat-label">Infinite Realms Explored</div>
+                </div>
+
+                <div class="stat-card glass-card popup-hover" data-popup="Clear Sky Rating">
+                    <div class="stat-icon"><i class="fa-solid fa-star-and-crescent"></i></div>
+                    <div class="stat-num">99.8%</div>
+                    <div class="stat-label">Astrophile Sky Visibility</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASTRAL JOURNAL / WEB BLOG SECTION -->
+        <section id="journal" class="section journal-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="sub-header"><i class="fa-solid fa-pen-nib"></i> ASTRAL LOGS</span>
+                    <h2 class="section-title">THE <span class="accent-text">STARDUST JOURNAL</span></h2>
+                    <p class="section-desc">Thoughts recorded while gazing into deep space and contemplating quantum mechanics.</p>
+                </div>
+
+                <!-- Blog Search & Controls Bar -->
+                <div class="blog-controls-bar glass-card">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="blog-search-input" placeholder="Search entries, keywords, tags...">
+                    </div>
+
+                    <div class="category-pills">
+                        <button class="filter-pill active" data-category="all" data-popup="All Posts">All Logs</button>
+                        <button class="filter-pill" data-category="astronomy" data-popup="Astronomy Tag">#astronomy</button>
+                        <button class="filter-pill" data-category="astrophile" data-popup="Astrophile Tag">#astrophile</button>
+                        <button class="filter-pill" data-category="quantum" data-popup="Quantum Tag">#quantum</button>
+                        <button class="filter-pill" data-category="astral" data-popup="Astral Tag">#astral</button>
+                    </div>
+
+                    <button id="open-new-post-modal" class="btn btn-primary popup-hover" data-popup="Write Entry">
+                        <i class="fa-solid fa-plus"></i> New Entry
+                    </button>
+                </div>
+
+                <!-- Blog Grid -->
+                <div class="blog-grid" id="blog-grid-container">
+                    <!-- Dynamic Blog Cards Injected Here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- QUANTUM LAB / COLLIDER PLAYGROUND -->
+        <section id="quantum-lab" class="section quantum-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="sub-header"><i class="fa-solid fa-vial"></i> INTERACTIVE LAB</span>
+                    <h2 class="section-title">QUARK COLLIDER & <span class="accent-text">PARTICLE LAB</span></h2>
+                    <p class="section-desc">Click or drag anywhere in the vacuum grid to spawn cyan subatomic particles.</p>
+                </div>
+
+                <div class="collider-container glass-card">
+                    <div class="collider-toolbar">
+                        <div class="tool-group">
+                            <label><i class="fa-solid fa-sliders"></i> Energy Level:</label>
+                            <input type="range" id="shake-intensity" min="1" max="10" value="5">
+                        </div>
+                        <button id="clear-collider" class="btn popup-hover" data-popup="Reset Vacuum">
+                            <i class="fa-solid fa-rotate"></i> Reset Vacuum
+                        </button>
+                    </div>
+
+                    <canvas id="collider-canvas"></canvas>
+
+                    <div class="collider-status">
+                        <span><i class="fa-solid fa-wave-square"></i> Status: <strong>Coherent</strong></span>
+                        <span><i class="fa-solid fa-cubes-stacked"></i> Active Quarks: <strong id="active-quark-count">0</strong></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="sub-header"><i class="fa-solid fa-camera"></i> VISUAL TRANSMISSIONS</span>
+                    <h2 class="section-title">CELESTIAL <span class="accent-text">PHOTO VAULT</span></h2>
+                    <p class="section-desc">Snapshots of Opuli Akshana in earthly presence and astronomical observations.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1: Hero Image -->
+                    <div class="gallery-item glass-card popup-hover" data-img="Hero image.jpg" data-title="Opuli Akshana — Stargazer Portrait" data-desc="Capturing the astral essence of an earthly presence." data-popup="Expand View">
+                        <div class="gallery-img-wrapper">
+                            <img src="Hero image.jpg" alt="Opuli Akshana Portrait" loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand expand-icon"></i>
+                                <span class="gallery-tag">#astrophile</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Opuli Akshana — Portrait</h4>
+                            <p>Stargazer of Infinite Realms</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2: Gallery Image 1 -->
+                    <div class="gallery-item glass-card popup-hover" data-img="584550095_1388857276584218_4466164934109946558_n.jpg" data-title="Deep Starlight Reflection" data-desc="Lost in thought under a sky full of ancient photons." data-popup="Expand View">
+                        <div class="gallery-img-wrapper">
+                            <img src="584550095_1388857276584218_4466164934109946558_n.jpg" alt="Deep Starlight Reflection" loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand expand-icon"></i>
+                                <span class="gallery-tag">#stardust</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Deep Starlight Reflection</h4>
+                            <p>Thinking in Quarks</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3: Gallery Image 2 -->
+                    <div class="gallery-item glass-card popup-hover" data-img="584743199_1388857083250904_1738220826637909040_n.jpg" data-title="Astral Projection Aura" data-desc="Connecting Earthly presence with the vast infinite cosmos." data-popup="Expand View">
+                        <div class="gallery-img-wrapper">
+                            <img src="584743199_1388857083250904_1738220826637909040_n.jpg" alt="Astral Projection Aura" loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand expand-icon"></i>
+                                <span class="gallery-tag">#astronomy</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Astral Projection Aura</h4>
+                            <p>Infinite Realms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BIO MANIFESTO SECTION -->
+        <section id="manifesto" class="section manifesto-section">
+            <div class="container">
+                <div class="manifesto-card glass-card popup-hover" data-popup="Philosophy">
+                    <div class="manifesto-content">
+                        <span class="sub-header"><i class="fa-solid fa-scroll"></i> ASTROPHILE CREED</span>
+                        <h2 class="manifesto-title">OPULI'S <span class="accent-text">MANIFESTO</span></h2>
+                        
+                        <blockquote class="manifesto-quote">
+                            “The atoms that compose my eyes were forged inside exploding stars billions of light-years away. To gaze at the night sky is not to look outward — it is the universe looking back at itself.”
+                        </blockquote>
+
+                        <div class="manifesto-grid">
+                            <div class="manifesto-col">
+                                <h3><i class="fa-solid fa-compass"></i> Principles</h3>
+                                <ul>
+                                    <li><strong>Infinite Curiosity:</strong> Every star holds an unwritten volume of quantum states.</li>
+                                    <li><strong>Astral Presence:</strong> Physical form and cosmic space mirror each other.</li>
+                                </ul>
+                            </div>
+
+                            <div class="manifesto-col">
+                                <h3><i class="fa-solid fa-telescope"></i> Observational Targets</h3>
+                                <ul>
+                                    <li><strong>Orion Nebula (M42):</strong> Stellar nursery of newborn suns.</li>
+                                    <li><strong>Andromeda Galaxy (M31):</strong> 2.5 million light-years distant.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASTRAL SIGNAL / CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-card glass-card">
+                    <div class="contact-grid">
+                        
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <span class="sub-header"><i class="fa-solid fa-tower-cell"></i> CONNECT</span>
+                            <h2>TRANSMIT A <span class="accent-text">SIGNAL</span></h2>
+                            <p>Send a message directly to Opuli for questions about astronomy, astrophilia, or quantum thoughts.</p>
+                            
+                            <div class="contact-details">
+                                <div class="c-item popup-hover" data-popup="Stargazer Name">
+                                    <i class="fa-solid fa-user-astronaut"></i>
+                                    <div>
+                                        <small>Entity Name</small>
+                                        <strong>Opuli Akshana</strong>
+                                    </div>
+                                </div>
+
+                                <div class="c-item popup-hover" data-popup="Instagram Signal">
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <div>
+                                        <small>Instagram Signal</small>
+                                        <strong>18+ STARGAZER OF INFINITE REALMS</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form id="astral-signal-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="sender-name">Your Name</label>
+                                <input type="text" id="sender-name" placeholder="e.g. Fellow Stargazer" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sender-freq">Your Email</label>
+                                <input type="email" id="sender-freq" placeholder="e.g. explorer@cosmos.org" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signal-message">Message</label>
+                                <textarea id="signal-message" rows="4" placeholder="Write your message..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block popup-hover" data-popup="Send Signal">
+                                <i class="fa-solid fa-paper-plane"></i> Transmit Signal
+                            </button>
+                            <div id="form-response-message"></div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="cosmic-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#hero" class="footer-logo" data-popup="Opuli Akshana">
+                    <span>✦</span> OPULI AKSHANA
+                </a>
+                <p>Made of stardust, thinking in quarks. #astronomy #astrophile</p>
+            </div>
+
+            <div class="footer-center">
+                <div class="moon-phase-widget glass-card popup-hover" data-popup="Lunar Tracking">
+                    <i class="fa-solid fa-moon glow-moon"></i>
+                    <div>
+                        <small>Current Earth Phase</small>
+                        <strong id="moon-phase-name">Waxing Gibbous (88%)</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <p>&copy; <span id="current-year">2026</span> Opuli Akshana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BLOG READ MODAL -->
+    <div id="blog-modal" class="modal-overlay">
+        <div class="modal-container glass-card">
+            <button class="modal-close" id="close-blog-modal">&times;</button>
+            <div class="modal-body" id="blog-modal-content">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW POST MODAL -->
+    <div id="new-post-modal" class="modal-overlay">
+        <div class="modal-container glass-card">
+            <button class="modal-close" id="close-new-post-modal">&times;</button>
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-feather-pointed"></i> Draft New Entry</h3>
+            </div>
+            <form id="new-post-form" class="modal-form">
+                <div class="form-group">
+                    <label for="post-title">Log Title</label>
+                    <input type="text" id="post-title" placeholder="e.g. Observations of the Perseid Meteor Shower" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-category">Category Tag</label>
+                    <select id="post-category" required>
+                        <option value="astronomy">#astronomy</option>
+                        <option value="astrophile">#astrophile</option>
+                        <option value="quantum">#quantum</option>
+                        <option value="astral">#astral</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="post-excerpt">Short Excerpt</label>
+                    <input type="text" id="post-excerpt" placeholder="A brief summary teaser..." required>
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Full Content</label>
+                    <textarea id="post-content" rows="6" placeholder="Write your thoughts..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Publish Log ✦</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- IMAGE LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="modal-overlay">
+        <div class="lightbox-content">
+            <button class="modal-close" id="close-lightbox">&times;</button>
+            <img src="" id="lightbox-img" alt="Enlarged view">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
