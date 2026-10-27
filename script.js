@@ -5,8 +5,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 0. FAST SKELETON LOADER FADE OUT ---
+    // --- 0. 2-SECOND CELESTIAL QUANTUM PRELOADER ---
     initSkeletonLoader();
+
+    // --- 0.1 SCROLL SHAKING ANIMATION LISTENER ---
+    initScrollShake();
 
     // --- 1. INITIALIZE STARFIELD CANVAS ---
     initStarfield();
@@ -31,19 +34,71 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   0. FAST SKELETON SCREEN LOADER
+   0. 2-SECOND CELESTIAL QUANTUM PRELOADER
    ========================================================================== */
 function initSkeletonLoader() {
     const loader = document.getElementById('skeleton-loader');
+    const progressBar = document.getElementById('loader-progress-bar');
+    const subtext = document.getElementById('loader-subtext');
+    const heroSection = document.getElementById('hero');
+
     if (loader) {
-        // Fast fade-out timing (600ms)
-        setTimeout(() => {
-            loader.classList.add('hidden');
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 300);
-        }, 600);
+        const totalDuration = 2000; // Exact 2 seconds loading duration
+        const startTime = Date.now();
+
+        // Progress bar smooth fill & status text transitions
+        const updateInterval = setInterval(() => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(100, (elapsed / totalDuration) * 100);
+
+            if (progressBar) {
+                progressBar.style.width = `${progress}%`;
+            }
+
+            if (subtext) {
+                if (progress > 65) {
+                    subtext.textContent = 'SYNAPSE SYNCHRONIZATION COMPLETE ✦';
+                } else if (progress > 30) {
+                    subtext.textContent = 'ALIGNING COSMIC COORDINATES...';
+                }
+            }
+
+            if (elapsed >= totalDuration) {
+                clearInterval(updateInterval);
+                loader.classList.add('hidden');
+
+                // Trigger vibrant hero starting entrance animation
+                if (heroSection) {
+                    heroSection.classList.remove('hero-entrance');
+                    void heroSection.offsetWidth; // Force reflow
+                    heroSection.classList.add('hero-entrance');
+                }
+
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }
+        }, 30);
     }
+}
+
+/* ==========================================================================
+   0.1 SCROLL SHAKING ANIMATIONS
+   ========================================================================== */
+function initScrollShake() {
+    let scrollTimeout = null;
+
+    window.addEventListener('scroll', () => {
+        // Add scroll tremor class when user scrolls through the site
+        if (!document.body.classList.contains('is-scrolling')) {
+            document.body.classList.add('is-scrolling');
+        }
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            document.body.classList.remove('is-scrolling');
+        }, 150);
+    }, { passive: true });
 }
 
 /* ==========================================================================
